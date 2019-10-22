@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+section {
+  height: 220px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3em;
+  height: 35%;
+  width: 30%;
+  border: 2px solid gray;
+  cursor: pointer;
+}
