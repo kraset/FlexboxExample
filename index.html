@@ -8,9 +8,57 @@
 </head>
 <body>
     <script src="/js/Domer.js"></script>
-    <!-- Import all other javascript files below Domer -->
-    <script src="/js/Person.js"></script>
-    
+    <script src="/js/Person.js"></script>    
     <script src="/js/App.js"></script>
+
+    
+    <h1>Test Flexbox without Domer</h1>
+
+    <div id="personTableContainer">
+    </div>
+
+    <script>
+        /*
+         * Ett vanilla JavaScript exempel utan Domer
+         */
+
+        //Definiera en array av person-objekt
+        const persons = [
+            {name: "Kalle", age: 23, address: "Storgatan 1"},
+            {name: "Greta", age: 76, address: "Lillgatan 2"},
+            {name: "Sven", age: 30, address: "Mellangatan 3"},
+        ];
+
+        //Leta upp var i HTML-dokumentetn som ska placera vår tabell
+        //Se div-tagen ovan: <div id="personTableContainer">
+        let sect = document.querySelector("#personTableContainer");
+
+        //Sätt tabellsträngen som tom från början.
+        tableString = "";
+
+        /*
+         * Hämta ut nyckelvärdena i varje person: name, age, address.
+         * Skriv de med fetstil överst som tabell-headers.
+         */
+        for (let key in persons[0]){
+            //Lägg namnet på nyckelvärdet i en div-tag som är stylad som smallSquare.
+            //<b> betyder bold = fetstil.
+            tableString += `<div id="smallSquare"><b>${key}</b></div>`;
+        }
+
+        //För varje personobjekt i persons-arrayen...
+        for (let person of persons){
+            //För varje nyckelvärde i ett personobjekt...
+            for (let keyIndex in person){
+                //Lägg detta nyckelvärde i en div-tag som är stylad som smallSquare.
+                tableString += `<div id="smallSquare">${person[keyIndex]}</div>`;
+            }
+        }
+        sect.innerHTML = tableString;
+    </script>
+<br><br><br><br>
+<br><br>
+    <h1>Flexbox with Domer</h1>
+
 </body>
 </html>

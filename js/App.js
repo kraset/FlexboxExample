@@ -16,9 +16,9 @@ class App extends Domer {
     let result = ``;
     for (let person of this.persons){
       result += `
-        <div>${person.name} </div>
-        <div>${person.age} </div>
-        <div>${person.address} </div>    
+        <div id="square">${person.name} </div>
+        <div id="square">${person.age} </div>
+        <div id="square">${person.address} </div>    
       `
     }
     return result;
